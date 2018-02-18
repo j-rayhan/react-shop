@@ -4,8 +4,9 @@ import {createStore} from 'redux';
 const reducer = function(state ={books:[]}, action){
   switch (action.type) {
     case "POST_BOOK":
-    let	books = state.books.concat(action.payload)
-      return {books};
+    // let	books = state.books.concat(action.payload)
+    //   return {books};
+    return {books: [...state.books, ...action.payload]};
       break;
   }
   return state
@@ -15,7 +16,7 @@ const reducer = function(state ={books:[]}, action){
 const store = createStore(reducer);
 
 store.subscribe(function(){
-  console.log('current state is: ',store.getState());
+  console.log('current new state is: ',store.getState());
 })
 
 //STEP 2 create and dispatch action
@@ -34,7 +35,7 @@ store.dispatch({
 	}]
 })
 
-//STEP 2 create and dispatch action
+//STEP 2 create and dispatch action  "babel-preset-stage-1": "^6.24.1",
 store.dispatch({
 	type:"POST_BOOK",
 	payload:[{
