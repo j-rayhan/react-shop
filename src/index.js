@@ -1,11 +1,11 @@
 "use strict"
 import {createStore} from 'redux';
 //STEP 3 define reducers
-const reducer = function(state =[], action){
+const reducer = function(state ={books:[]}, action){
   switch (action.type) {
     case "POST_BOOK":
-    let	books = state.concat(action.payload)
-      return books;
+    let	books = state.books.concat(action.payload)
+      return {books};
       break;
   }
   return state
@@ -37,10 +37,10 @@ store.dispatch({
 //STEP 2 create and dispatch action
 store.dispatch({
 	type:"POST_BOOK",
-	payload:{
+	payload:[{
 			id:3,
 			title: 'this is the 3rd book title',
 			description: 'this is the 3rd book discription',
 			price: 39
-		}
+		}]
 })
