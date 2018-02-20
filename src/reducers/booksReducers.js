@@ -36,7 +36,7 @@ export function booksReducers(state ={books:[]}, action){
     	title: action.payload.title,
         price: action.payload.price
     }
-    console.log('what is it newBookToUpdate ', newBookToUpdate);
+    //console.log('what is it newBookToUpdate ', newBookToUpdate);
     // USE SLICE TO REMOVE THE BOOK AT THE SPECIFIED INDEX, REPLACE WITH THE NEW OBJECT ANC CONCATE WITH 
     // THE REST OF ITEMS IN THE ARRAY
     return {books: [...currentBooksToUpdate.slice(0, indexToUpdate), newBookToUpdate, ...currentBooksToUpdate.slice(indexToUpdate + 1)]};
