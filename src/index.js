@@ -2,12 +2,21 @@
 import {applyMiddleware, createStore} from 'redux';
 import logger from 'redux-logger'
 
+// React 
+import React from 'react'
+import {render} from 'react-dom'
+//Import Reducers
 import reducers from './reducers';
 //Import Actions
 import {addToCart} from './actions/cartActions';
 import {postBooks, deleteBook, updateBook} from './actions/bookActions'
 
 
+import BooksList from './components/pages/booksList'
+
+render(
+	<BooksList />,document.getElementById('app')
+	);
 // STEP 1 create the store
 const middleware = applyMiddleware(logger)
 const store = createStore(reducers, middleware);

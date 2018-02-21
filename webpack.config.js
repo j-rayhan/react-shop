@@ -16,11 +16,16 @@ module.exports = {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
+  resolve:{
+      alias:{
+    },
+      extensions: ['.js','.jsx']
+  },
   watch: true,
   module:{
     loaders:[
       {
-        test:/\.js$/,
+        test:/\.(js|jsx)$/,
         exclude:/node_modules/,
         loader: 'babel-loader',
         query:{
