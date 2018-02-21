@@ -12,7 +12,7 @@ import {Provider} from 'react-redux'
 import reducers from './reducers';
 //Import Actions
 import {addToCart} from './actions/cartActions';
-import {postBooks, deleteBook, updateBook} from './actions/bookActions'
+import {getBooks, deleteBook, updateBook} from './actions/bookActions'
 
 
 
@@ -33,19 +33,19 @@ render(
 // })
 
 //STEP 2 create and dispatch action
-store.dispatch(postBooks(
-			[{
-				id:1,
-				title: 'this is the book title',
-				description: 'this is the book discription',
-				price: 33.33
-			},{
-				id:2,
-				title: 'this is the second book title',
-				description: 'this is the second book discription',
-				price: 38
-			}]
-	))
+// store.dispatch(postBooks(
+			// [{
+			// 	id:1,
+			// 	title: 'this is the book title',
+			// 	description: 'this is the book discription',
+			// 	price: 33.33
+			// },{
+			// 	id:2,
+			// 	title: 'this is the second book title',
+			// 	description: 'this is the second book discription',
+			// 	price: 38
+			// }]
+// 	))
 
 // //delete book  
 // store.dispatch(deleteBook({id: 1}))
