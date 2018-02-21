@@ -8,6 +8,8 @@ import {render} from 'react-dom'
 
 import {Provider} from 'react-redux'
 
+//Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.css';
 //Import Reducers
 import reducers from './reducers';
 //Import Actions

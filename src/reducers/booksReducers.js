@@ -1,7 +1,17 @@
 "use strict"
-
-//Book reducers
-export function booksReducers(state ={books:[{
+for (let i = 0; i < 3; i++) {
+  //console.log(i);
+       var a =    [ {
+                       id:i,
+                       title: "this is the second book title",
+                       description: 'this is the book discription',
+                       price: 38
+                   }]
+            a.concat(a)
+           // console.log(a);
+}
+const bookList=[
+            {
                 id:1,
                 title: 'this is the book title',
                 description: 'this is the book discription',
@@ -11,7 +21,21 @@ export function booksReducers(state ={books:[{
                 title: 'this is the second book title',
                 description: 'this is the second book discription',
                 price: 38
-            }]}, action){
+            },{
+                id:3,
+                title: 'this is the book title',
+                description: 'this is the book discription',
+                price: 33.33
+            },{
+                id:4,
+                title: 'this is the second book title',
+                description: 'this is the second book discription',
+                price: 38
+            }
+            ]
+
+//Book reducers
+export function booksReducers(state ={books:bookList}, action){
   switch (action.type) {
     case "GET_BOOK":
     return {...state, books: [...state.books]};
